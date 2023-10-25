@@ -4,35 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RG Dev</title>
-    <link rel="preload" href="CSS/normalize.css" as="styles">
+    <!-- Realiza primero la compatibilidad entre navegadores -->
+    <link rel="preload" href="CSS/normalize.css" as="styles"> 
     <link rel="stylesheet" href="CSS/normalize.css">
+    <!-- Luego todo lo externo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <!-- De último nuestro estilo, porque no tiene sentido realizar hacerlo sin antes cargar fuentes -->
     <link rel="preload" href="CSS/styles.css" as="styles">
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
     <header>
         <h1 class="titulo"> Javier Pedraza <span>Developer </span></h1> 
+        <div>
+            <!-- 7 <em></em>
+                  -->
+        <!-- En una clase se puede poner varias dentro, separando con un espacio, en el ID es único -->
+            <nav class="navegacion-principal contenedor">
 
-        <nav>
-
-            <ul>
-                <li>
-                    <a href="#">Inicio</a>
-                </li>
-                <li>
-                    <a href="#">Sobre Mí</a>
-                </li>
-                <li>
-                    <a href="#">Clientes </a>
-                </li>
-                <li>
-                    <a href="#">Contacto</a>
-                </li>
-            </ul>
+                <ul>
+                    <li>
+                        <a href="#">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#">Sobre Mí</a>
+                    </li>
+                    <li>
+                        <a href="#">Clientes </a>
+                    </li>
+                    <li>
+                        <a href="#">Contacto</a>
+                    </li>
+                </ul>
         </nav>
+        </div>
 
         <section>
             <h2 class="titulo"> Diseño y Desarrollo Web</h2>

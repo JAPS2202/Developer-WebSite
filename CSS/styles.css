@@ -1,6 +1,9 @@
 /*  Pseudo-clase, y en este caso se creará nuestra propia paleta de colores 
 houston properties, raiz-root */
 :root{
+    /* Siempre va con 2 guiones medios y el nombre de las variables
+    var(--blanco) 
+    var(--oscuro)*/
     --blanco: #ffffff;
     --oscuro: #212121;
     --primario: #ffc107;
@@ -22,6 +25,9 @@ body{
 /* Selector de clase*/
 .titulo{
     text-align: center;
+    /* Unidades de medidas en pixeles, sirve para estandarizar tamaños en varios dispositivos
+    en donde son variables para el tamaño de letra, en pixeles solo sirve para nuestro dispositivos,
+    pero con rems se va adaptando */
     font-size:  3.8rem;
     /* Hay navegadores que no tengan algún tipo de letra tipo arial, pues busca si tiene Helvetica, es por prioridad */
     /* Google fonts: krub*/
@@ -40,4 +46,16 @@ por eso mejor se hace específico al <span>- */
 
 /* Normalize.css -Normaliza estilos para que todo eso entre navegadores ya no haya diferencia en ellos */
 
+.contenedor{
+    width: 120rem;
+    /* margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0px; */
+    margin: 0 auto;
+}
 /* La siguiente clase de inicia con la barra de navegación */
+.navegacion-principal{
+    background-color: var(--secundario);
+}
+
