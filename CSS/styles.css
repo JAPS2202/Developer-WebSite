@@ -1,0 +1,43 @@
+/*  Pseudo-clase, y en este caso se creará nuestra propia paleta de colores 
+houston properties, raiz-root */
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* En el body se pone todo lo que el usuario quiera ver, entonces por eso de preferencia el tipo de texto se pone aquí */
+body{
+    font-size: 16px;
+    
+    font-family: 'Krub', sans-serif;
+}
+    
+/* Selector de clase*/
+.titulo{
+    text-align: center;
+    font-size:  3.8rem;
+    /* Hay navegadores que no tengan algún tipo de letra tipo arial, pues busca si tiene Helvetica, es por prioridad */
+    /* Google fonts: krub*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* # Selector de id */
+/* text-align : end -Aplica el cambio solo a la última clase y no respeta el span, entonces
+por eso mejor se hace específico al <span>- */
+.titulo span{
+    font-size:  2rem;
+}
+/* !important , no importa que un elemento se haya editado con prioridad, lo ignora y realiza este */
+
+/* rgb= red green blue que tanto de estos colores se quiere. 
+   rgba= red green blue alpha, que se refiere que tan transparente quieres el color va de 0 a 1*/
+
+/* Normalize.css -Normaliza estilos para que todo eso entre navegadores ya no haya diferencia en ellos */
+
+/* La siguiente clase de inicia con la barra de navegación */

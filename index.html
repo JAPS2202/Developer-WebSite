@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RG Dev</title>
+    <link rel="preload" href="CSS/normalize.css" as="styles">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="CSS/styles.css" as="styles">
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
     <header>
-        <h1> Javier Pedraza Developer</h1>
+        <h1 class="titulo"> Javier Pedraza <span>Developer </span></h1> 
 
         <nav>
 
@@ -29,7 +35,7 @@
         </nav>
 
         <section>
-            <h2> Diseño y Desarrollo Web</h2>
+            <h2 class="titulo"> Diseño y Desarrollo Web</h2>
             <p> Mérida, Yuc</p>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFC107" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -102,6 +108,7 @@
 
     <!-- Input e img no tienen etiquetas de cierre, investigar -->
     <form>
+        <!-- <fieldset> sirve para darle un orden a los elementos de un formulario -->
         <fieldset>
             <legend>
                 Llena tus datos para establecer contacto
