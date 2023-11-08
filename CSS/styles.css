@@ -13,8 +13,13 @@ houston properties, raiz-root */
 
 html {
     font-size: 62.5%;
+    /* Hack para el manejo de box model */
+    box-sizing: border-box;
 }
-
+/* Hack para el manejo de box model */
+*,*:before,*:after{
+    box-sizing: inherit;
+}
 /* En el body se pone todo lo que el usuario quiera ver, entonces por eso de preferencia el tipo de texto se pone aquí */
 body{
     font-size: 16px;
@@ -23,15 +28,21 @@ body{
 }
     
 /* Selector de clase*/
-.titulo{
+/* Tpografía */
+h1{
+    font-size: 3.8rem;
+    
+
+}
+h2{
+    font-size: 2.8rem;
+
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
     text-align: center;
-    /* Unidades de medidas en pixeles, sirve para estandarizar tamaños en varios dispositivos
-    en donde son variables para el tamaño de letra, en pixeles solo sirve para nuestro dispositivos,
-    pero con rems se va adaptando */
-    font-size:  3.8rem;
-    /* Hay navegadores que no tengan algún tipo de letra tipo arial, pues busca si tiene Helvetica, es por prioridad */
-    /* Google fonts: krub*/
-    font-family: Arial, Helvetica, sans-serif;
 }
 /* # Selector de id */
 /* text-align : end -Aplica el cambio solo a la última clase y no respeta el span, entonces
@@ -47,15 +58,105 @@ por eso mejor se hace específico al <span>- */
 /* Normalize.css -Normaliza estilos para que todo eso entre navegadores ya no haya diferencia en ellos */
 
 .contenedor{
-    width: 120rem;
+    max-width: 120rem;
     /* margin-top: 100px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 0px; */
     margin: 0 auto;
 }
+
 /* La siguiente clase de inicia con la barra de navegación */
+.navegacion-principal {
+    
+    display: flex;
+    /* around: Toma la mitad del espacio entre elementos y lo coloca al principio y fin
+       between: solo cuenta el espacio entre los elementos, usando el primer espacio disponible
+       evenly: aplica el mismo espacio de separación para todos */
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 2rem;
+    align-items: center;
+
+}
+/* Padding lo que hay dentro del contendor, si hay que hacer más ancho el espacio con este
+   Margin es lo que está afuera */
+.navegacion-principal a{
+    /* background-color: var(--primario); */
+    /* Nav elementos en línea lo cual hace que estén seguidos */
+    /* Display: block  */
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+    flex-direction: column;
+
+}
 .navegacion-principal{
     background-color: var(--secundario);
 }
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
 
+
+@media(min-width: 768px){
+    .navegacion-principal{
+    flex-direction: row;
+    }
+
+}
+/* cuando se hace chico uno se centra y otro se va a la izquierda, diferencia como hacer uqe se centre */
+/* Hero */
+.hero{
+    /* ../ es para regresar un nivel de directorio, la carpeta IMG está afuera del CSS */
+    background-image: url(../IMG/MicrosoftTeams-image.png);
+    background-repeat: no-repeat; /*Para evitar que se repita la imagen si se hace zoom out */
+    background-size: cover; /*Sirve par acubrir la imagen con todo el tamaño de la pantalla*/
+    height: 450px; /* Alto del elemento hero*/
+    position: relative; /* El padre debe ser relativo*/
+
+}
+
+.contenido-hero{
+    position: absolute; /* El hijo tiene que ser absoluto*/
+    background-color: rgba(0, 0, 0, 0.7); /*70% de transparencia*/
+    width: 100%;
+    height: 100%;
+    /* Alinear vertical y horizontalmente*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.contenido-hero p, .contenido-hero h2{
+    color: var(--blanco);
+}
+
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+
+  
+}
+.boton{
+    background-color: var(--secundario); /*Color de fondo
+    padding: 1rem 3 rem; /* Arriba 1 rem , a los lados 3 rem*/
+    border-radius: .5rem; /*Esquinas redondeadas*/
+    color: var(--blanco); /*Tamaño de la letra*/
+    margin-top: 3rem; /*Espacio exterior hacia arriba*/
+    font-weight:  bold;/*En negritas*/
+    font-size:  2 rem; /*Tamaño de la letra*/
+    text-transform: uppercase; /*Convertir letras en mayuscula*/
+    text-align: center;/*Centrar texto*/
+    width: 90%; /*Ancho del botón que abarque el 90% si la pantalla es pequeña*/
+    
+}
+@media (min-width:768px){
+    .boton{
+        width: auto;
+    }
+}
