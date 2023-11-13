@@ -9,12 +9,23 @@ houston properties, raiz-root */
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisClaro:#DFE9F3;
+
 }
 
 html {
     font-size: 62.5%;
     /* Hack para el manejo de box model */
     box-sizing: border-box;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%,var(--blanco)100%);
+}
+.sombra{
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.48);
+    background-color: var(--blanco);
+    padding: 2 rem;
+    border-radius: 1 rem;
 }
 /* Hack para el manejo de box model */
 *,*:before,*:after{
@@ -22,8 +33,8 @@ html {
 }
 /* En el body se pone todo lo que el usuario quiera ver, entonces por eso de preferencia el tipo de texto se pone aquí */
 body{
+    margin:0;
     font-size: 16px;
-    
     font-family: 'Krub', sans-serif;
 }
     
@@ -68,7 +79,6 @@ por eso mejor se hace específico al <span>- */
 
 /* La siguiente clase de inicia con la barra de navegación */
 .navegacion-principal {
-    
     display: flex;
     /* around: Toma la mitad del espacio entre elementos y lo coloca al principio y fin
        between: solo cuenta el espacio entre los elementos, usando el primer espacio disponible
@@ -78,6 +88,7 @@ por eso mejor se hace específico al <span>- */
     font-weight: bold;
     font-size: 2rem;
     align-items: center;
+    width: 100%;
 
 }
 /* Padding lo que hay dentro del contendor, si hay que hacer más ancho el espacio con este
@@ -90,6 +101,7 @@ por eso mejor se hace específico al <span>- */
     color: var(--blanco);
     text-decoration: none;
     flex-direction: column;
+    
 
 }
 .navegacion-principal{
@@ -116,6 +128,7 @@ por eso mejor se hace específico al <span>- */
     background-size: cover; /*Sirve par acubrir la imagen con todo el tamaño de la pantalla*/
     height: 450px; /* Alto del elemento hero*/
     position: relative; /* El padre debe ser relativo*/
+    margin-bottom: 2rem;
 
 }
 
@@ -142,9 +155,10 @@ por eso mejor se hace específico al <span>- */
 
   
 }
+
 .boton{
-    background-color: var(--secundario); /*Color de fondo
-    padding: 1rem 3 rem; /* Arriba 1 rem , a los lados 3 rem*/
+    background-color: var(--secundario); /*Color de fondo*/
+    padding: 1rem 3rem; /* Arriba 1 rem , a los lados 3 rem*/
     border-radius: .5rem; /*Esquinas redondeadas*/
     color: var(--blanco); /*Tamaño de la letra*/
     margin-top: 3rem; /*Espacio exterior hacia arriba*/
@@ -153,10 +167,48 @@ por eso mejor se hace específico al <span>- */
     text-transform: uppercase; /*Convertir letras en mayuscula*/
     text-align: center;/*Centrar texto*/
     width: 90%; /*Ancho del botón que abarque el 90% si la pantalla es pequeña*/
+    text-decoration: none; /*Quita la línea de subrayado del botón*/
     
 }
+/* Para el diseño responsivo */
 @media (min-width:768px){
     .boton{
         width: auto;
     }
 }
+
+/* Servicios */
+@media (min-width:768px){
+    .servicios{
+        display: grid;
+        /* grid-template-columns: 1fr 1fr 1fr; F1. RACCIÓN*/
+        /* grid-template-columns: 33.3% 33.3% 33.3%; 2. PORCENTAJE*/
+        grid-template-columns: repeat(3, 1fr); /*3. FUNCIÓN*/
+        column-gap: 1rem; /*Distancia entre colummas*/
+    }
+}
+.servicio{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p{
+    line-height: 2; /*Interlineado*/
+    text-align:  center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%; /*Manera circular*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
