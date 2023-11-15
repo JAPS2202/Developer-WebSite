@@ -17,17 +17,19 @@ html {
     font-size: 62.5%;
     /* Hack para el manejo de box model */
     box-sizing: border-box;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;/* La letra "y" hace referencia al eje y que quiere 
+    decir que se enfoca en el scroll vertical. Mandatory define que tan estricto se requiere 
+    el scroll. Otra alternativa menos estricta es proximity */
     background-image: linear-gradient(to top, var(--grisClaro) 0%,var(--blanco)100%);/*Degradado de arriba hacia abajo*/
     
 }
 .sombra{
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.48);
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.48);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.48);
-    background-color: var(--blanco);
-    padding: 2rem;
-    border-radius: 2rem;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.48); /* Sombra del elemento, al borde */
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.48);/* Motor para Chrome */
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.48); /* Motor para Firefox */
+    background-color: var(--blanco);/*Color de fondo*/
+    padding: 2rem; /*Color de interior*/
+    border-radius: 2rem; /*Esquinas redondeadas*/
 }
 /* Hack para el manejo de box model */
 *,*:before,*:after{
@@ -109,12 +111,12 @@ por eso mejor se hace específico al <span>- */
     /* around: Toma la mitad del espacio entre elementos y lo coloca al principio y fin
        between: solo cuenta el espacio entre los elementos, usando el primer espacio disponible
        evenly: aplica el mismo espacio de separación para todos */
-    flex-direction: column;
-    justify-content: space-between;
-    font-weight: bold;
-    font-size: 2rem;
-    align-items: center;
-    width: 100%;
+    flex-direction: column; /*establece la dirección principal en la que se colocan los elementos hijos dentro del contenedor flex*/
+    justify-content: space-between; /*los elementos se distribuyen de manera que haya espacio igual entre ellos y en los extremos del contenedor.*/
+    font-weight: bold; /*Establece el grosor del texto*/
+    font-size: 2rem; /*Establece el tamaño de la fuente*/
+    align-items: center; 
+    width: 100%; /*Establece el ancho del contenedor flex al 100% del ancho del contenedor */
 
 }
 /* Padding lo que hay dentro del contendor, si hay que hacer más ancho el espacio con este
@@ -123,10 +125,10 @@ por eso mejor se hace específico al <span>- */
     /* background-color: var(--primario); */
     /* Nav elementos en línea lo cual hace que estén seguidos */
     /* Display: block  */
-    padding: 1rem;
-    color: var(--blanco);
-    text-decoration: none;
-    flex-direction: column;
+    padding: 1rem; /* Establece el relleno alrededor del contenido del elemento*/
+    color: var(--blanco); /*Define el color del texto dentro del elemento*/
+    text-decoration: none; /*Elimina la decoración de texto predeterminada, como subrayado, del enlace*/
+    flex-direction: column; /*Los elementos se colocan de arriba hacia abajo*/
     
 
 }
@@ -176,8 +178,8 @@ por eso mejor se hace específico al <span>- */
 }
 
 .ubicacion{
-    display: flex;
-    align-items: flex-end; 
+    display: flex; /*Esteblece un contenedor flexible para mover los elementos*/
+    align-items: flex-end; /*Controla la alineación*/
 }
 
 .boton{
@@ -199,13 +201,13 @@ por eso mejor se hace específico al <span>- */
 @media (min-width:768px){
     .boton :hover{
         cursor: pointer;
-    }
+    } /*Establece un efecto visual al usuario, cambiando el cursos a una mano cuando el ratón pasa sobre el elemento con la clase "boton"*/
 }
 /* Para el diseño responsivo */
 @media (min-width:768px){
     .boton{
         width: auto;
-    }
+    } /*este bloque de código asegura que los elementos con la clase boton tengan un ancho automático, permitiendo que el ancho del botón se ajuste según su contenido (diseño responsivo)*/
 }
 
 /* Servicios */
@@ -219,9 +221,9 @@ por eso mejor se hace específico al <span>- */
     }
 }
 .servicio{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex;/*Establece el contenedor como un contenedor flexible*/
+    flex-direction: column;/*Los elementos se colocan en una columna de arriba hacia abajo*/
+    align-items: center;/*Alínea los elementos a lo largo del contenedor*/
 }
 .servicio h3{
     color: var(--secundario);
@@ -235,12 +237,12 @@ por eso mejor se hace específico al <span>- */
 
 .servicio .iconos{
     height: 15rem;
-    width: 15rem;
-    background-color: var(--primario);
+    width: 15rem; /*El tamaño de la figura que queremos formar de alto y ancho*/
+    background-color: var(--primario); /*Color de la figura en este caso amarillo*/
     border-radius: 50%; /*Manera circular*/
-    display: flex;
+    display: flex; 
     justify-content: space-evenly;
-    align-items: center;
+    align-items: center; /*Coloque los iconos en el centro de la figura generada*/
 }
 
 @media (min-width:768px)
@@ -250,8 +252,12 @@ por eso mejor se hace específico al <span>- */
         grid-template-columns: repeat(2,1fr);
         column-gap: 1rem;
         grid-template-rows: auto auto 20rem;
+        /* También se podría crear la clase de ayuda campo-correo para llamar el selector, 
+        pero se recomienda no crear nuevas clases si no es estrictamente necesario.
+        nth-child significa el # del hijo. El orden sería: nombre, teléfono, correo, mensaje. 
+        Como requerimos modificar correo y mensaje, usaremos 3 y 4 en nth-child */
         .campo:nth-child(3),
-    .campo:nth-child(4){
+        .campo:nth-child(4){
         grid-column: 1/3; /* Para posicionar el elemento, "que vaya de la columna 1 a la 
 3*/
 
@@ -260,23 +266,23 @@ por eso mejor se hace específico al <span>- */
 }
 /* Formulario */
 .formulario{
-    background-color: var(--gris);
-    width: min(60rem,100%);
-    margin: 0 auto;
-    padding: 2rem;
-    border-radius: 1rem;
+    background-color: var(--gris); /*Color del fondo será gris*/
+    width: min(60rem,100%); /*Tmamaño del recuadro para el formulario*/
+    margin: 0 auto; /*Establece el margen del elemento*/
+    padding: 2rem; /*Establece el relleno alrededor del contenido del elemento*/
+    border-radius: 1rem; /*Establece que tan redondeado quieres las esquinas del elemento*/
     
 }
 .formulario fieldset{
-    border: none;
+    border: none; 
 }
 .formulario legend{
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    color: var(--primario);
+    text-align: center; /*Coloca en el centro el texto de la leyenda del formulario*/
+    font-size: 1.8rem; /*Tamaño de la fuente*/
+    font-weight: bold; /*Grosor de la letra*/
+    margin-bottom: 2rem; /*Separación*/
+    text-transform: uppercase; /*Transforma el texto a mayúsculas*/
+    color: var(--primario); /*Llevará el color amarillo la fuente*/
 }
 /* Campos */
 .contenedor-campos{
@@ -309,6 +315,8 @@ por eso mejor se hace específico al <span>- */
 
 /* Scroll snap */
 .titulo, .servicios-heading, .contacto-heading{
-    scroll-snap-align: start;
-    scroll-padding-top: always;
+    scroll-snap-align: start; /* Indica el punto en el contenedor de desplazamiento al que 
+    debe ajustarse el contenido*/
+    scroll-padding-top: always;/* Controla si el desplazamiento debe detenerse siempre en 
+    los puntos de ajuste */
 }
